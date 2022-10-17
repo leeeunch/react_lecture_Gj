@@ -1,12 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import App from './App'; //App은 App.js 
 import reportWebVitals from './reportWebVitals';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById('root')); //root 요소를 react로 표현할 수 있게함
 root.render(
-  <React.StrictMode>
+  //안전 장치 //없어도 사용 가능 
+  //<App /> : 실질적 태그 App.js와 연결됨
+  <React.StrictMode> 
     <App />
   </React.StrictMode>
 );
