@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App'; //App은 App.js 
 import reportWebVitals from './reportWebVitals';
+import {BrowserRouter} from 'react-router-dom';
+//BrowserRouter : 컴포넌트에서 router 기능을 사용할 수 있게끔 만들어줌
 
 const root = ReactDOM.createRoot(document.getElementById('root')); //root 요소를 react로 표현할 수 있게함
 root.render(
