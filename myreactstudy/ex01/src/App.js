@@ -19,6 +19,8 @@ function App() { //App : 부모 컴포넌트
     //<Ex01 name={name} ttt="124" color={myColor}></Ex01> //Ex01 : 자식 컴포넌트
     //<Ex02></Ex02>
     //<Ex03></Ex03>
+
+
     <>
     <Header></Header>
     {/* <Switch></Switch> : routes의 옛날 버전 */}

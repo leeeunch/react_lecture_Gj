@@ -10,6 +10,8 @@ function Ex04() {
     const [inputId, setId] = useState("아이디입력");
     const [inputPw, setPw] = useState("비밀번호 입력");
     const [inputNick, setInputNick] = useState('');
+    const [button, clickButton] = useState('')
+    
     // let id = "";
     // let pw = "";
 
@@ -20,12 +22,21 @@ function Ex04() {
             nav("/about?id=smhrd&nick="+inputNick)
         } else {
             setInputData("로그인실패")
+            console.log(inputData)
         }
-    },[inputNick])
+    },[button]) //inputNick 값이 업데이트될 때만 useEffect가 시행됨
 
 function getId(e) {
     setId(e.target.value);
 } 
+
+function changeNick(e) {
+    setInputNick(e.target.value);
+}
+
+function returnNick() {
+    clickButton('값');
+}
 
 // function click() {
 //     if(inputId == "smhrd" && inputPw == 123) {
@@ -52,8 +63,9 @@ function getPw(e) {
         <br></br>
         PW : <input onChange={getPw}></input>
         <br></br>
-        Nick : <input onChange={(e)=>setInputNick(e.target.value)}></input>{/*닉네임 input */}
-
+        {/* Nick : <input onChange={(e)=>setInputNick(e.target.value)}></input>닉네임 input */}
+        Nick : <input onChange={changeNick}></input>{/*닉네임 input */}
+        <button onClick = {returnNick}>로그인</button>
         {/* <button onClick={() => {
             chPw()
             chId()}}>로그인</button> */}
