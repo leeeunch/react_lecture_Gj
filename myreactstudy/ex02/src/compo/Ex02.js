@@ -25,6 +25,7 @@ function Ex02() {
             console.log(index)
             return index != e.target.value; //여기서 e.target.value는 뭔가?
         }))
+        //console.log(e.target)
     }
 //여기서 e.target.value는 뭔가
 //buton tag에는 value가 없는데 어떻게 index값과 비교하는건지??
@@ -36,10 +37,10 @@ function Ex02() {
         <input onChange={getValue}></input>  {/*input값이 바뀔 때 마다 getValue 함수 실행*/}
         <button onClick ={setTodo}>추가</button> {/*버튼 클릭시마다 inputValue를 todoArray에 추가*/}
         {/* jsx 문법 내에서 js코드 사용하기 위함 */}
-        {todoArray.map(function(data){ 
+        {todoArray.map(function(data, index){ 
             return <div>
             <h1 value = {data}>{data}</h1>
-            <button onClick = {deleteList}>삭제</button>
+            <button value={index} onClick = {deleteList}>삭제</button>
             </div>
         })}
         </>

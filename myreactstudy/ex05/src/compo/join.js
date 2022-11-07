@@ -47,7 +47,7 @@ function Join(){
         setNick(e.target.value);
     }
     function tryJoin(){
-        dispatch({
+        dispatch({ //공유된 상태값 수정
             type:'change', 
             id : inputId, 
             pw : inputPw, 

@@ -35,7 +35,7 @@ function reducer(currentState, action){
   //action에 있는 값을(message)를 가져와서 state 변경 로직
 
   //변경 후 -> 반환
-  return {...currentState}
+  return {...currentState} //...은 currentState의 모든 값을 전달한다는 의미
 
 }
 

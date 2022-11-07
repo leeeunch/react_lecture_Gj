@@ -5,7 +5,7 @@ function Ex01(){
     const [movieArray, setMovieArray] = useState([]) //movieArray가 array 형태이므로 기본값으로 []를 줘야함
     // const url = "http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=f5eef3421c602c6cb7ea224104795888&targetDt=20120101";
         
-    //     //axios 비동기 통신 방법으로 통신 진행
+    //axios 비동기 통신 방법으로 통신 진행
     // const result = axios.get(url) 
     // const array = result.data.boxOfficeResult.dailyBoxOfficeList;
     async function getMovies(){

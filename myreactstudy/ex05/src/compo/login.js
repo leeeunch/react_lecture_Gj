@@ -1,10 +1,12 @@
 import axios from 'axios'
 import { useState } from 'react'
-import {useSelector} from 'react-redux';
+import {useSelector, useDispatch} from 'react-redux';
 import { useSearchParams,useNavigate } from 'react-router-dom'
 //useRef : 컴포넌트 안의 특정DOM(요소) 선택할 수 있도록 도와주는 기능
 
 function Login(){
+    const dispatch = useDispatch();
+    const nav = useNavigate();
     const joinId = useSelector((state) => state.id);
     const joinPw = useSelector((state) => state.pw);
     const joinNick = useSelector((state) => state.nick);
@@ -13,7 +15,7 @@ function Login(){
     const [inputPw, setPw] = useState("pw를 입력하세요");
     const [result, setResult] = useState("");
     const [searchParams, setSearchParams] = useSearchParams(""); //useSearchParams : 주소값이 있는 쿼리스트링 데이터를 꺼내올 수 있게 만들어줌
-    const nav = useNavigate();
+    
     //searchParams.get 메소드로 쿼리스트링 키 값으로 쿼리스트링 데이터 꺼내오기 가능
     // const id = searchParams.get('id');
     // const pw = searchParams.get('pw');
@@ -32,8 +34,12 @@ function Login(){
     function resetPw(e) {
         setPw("")
     }
+    // function navigateTopage(){
+    //     nav("../Main?nick="+joinNick);
+    // }
     function navigateTopage(){
-        nav("../Main?nick="+joinNick);
+
+        nav("../Main"); //..을 붙인 이유는 현재 경로가 /login이기 때문
     }
     function alterResult() {
         setResult("로그인 실패")
